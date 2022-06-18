@@ -27,20 +27,15 @@ public:
         for (int i = s.length() - 1; i >= 0; i--){
             //The character reading backwards: s[i];
             //If its not the last index: (To avoid bad access)
-            if(i > 0){
-                int currNum = roman[s[i]];
-                int prevNum = roman[s[i-1]];
-                if(currNum > prevNum){
-                    //Decrese index to avoid jump.
-                    i--;
-                    sum += currNum - prevNum;
-                }
-                else{
-                    sum += currNum;
-                }
+            // int curr = roman[s[i]];
+            if(i > 0 && (roman[s[i]]>(roman[s[i-1]]))){
+                sum += (roman[s[i]] - (roman[s[i-1]]));
+                // cout << (curr - (roman[s[i-1]])) << " ";
+                i--;
             }
-            else if(i == 0){
-                sum = sum + roman[s[0]];
+            else{
+                sum += roman[s[i]];
+                // cout << curr << " ";
             }
         }
         return sum;
