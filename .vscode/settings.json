@@ -2,6 +2,19 @@
     "files.associations": {
         "xstring": "cpp",
         "xutility": "cpp",
-        "unordered_map": "cpp"
+        "unordered_map": "cpp",
+        "tuple": "cpp",
+        "stack": "cpp",
+        "deque": "cpp",
+        "initializer_list": "cpp",
+        "list": "cpp",
+        "type_traits": "cpp",
+        "vector": "cpp",
+        "xhash": "cpp",
+        "xtree": "cpp",
+        "istream": "cpp",
+        "memory": "cpp",
+        "utility": "cpp",
+        "xlocnum": "cpp"
     }
 }
