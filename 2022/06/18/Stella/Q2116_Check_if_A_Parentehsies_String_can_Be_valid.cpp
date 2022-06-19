@@ -11,12 +11,6 @@
 // Return true if you can make s a valid parentheses string. Otherwise, return false.
 
 #include <iostream>
-#include <string>
-#include <map>
-#include <unordered_map>
-
-#include <stack>
-#include <tuple>
 
 using namespace std;
 
