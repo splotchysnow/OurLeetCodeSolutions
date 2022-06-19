@@ -38,32 +38,55 @@ public:
         info[')'] = '(';
 
         for(int i = 0; i < s.length(); i++){
-            
-            //if the next char's open happends to be in the load's top. pop it.
-            //condition 1: If stack is not empty;
+            //First forLoop take out all senario with 11;
+            if(load.size() != 0 && get<1>(load.top()) == locked[i] == '1'){
+                //Case where the top is both 1: check for valid;
+                if(get<0>(load.top()) == info[s[i]]){
+                    load.pop();
+                }
+            }
+            else{
+                load.push({s[i], locked[i]});
+            }
+        }
+
+        //TODO: Brute Force method:
+        //Load it in the strings;
+        string s_ = "";
+        string locked_ = "";
+        while(load.size()!=0){
+            s_ += get<0>(load.top());
+            locked_ += get<1>(load.top());
+            load.pop();
+        }
+        //Reverse the strings:
+        reverse(s_.begin(), s_.end());
+        reverse(locked_.begin(), locked_.end());
+
+        //Left with several cases:
+        for(int i = 0; i < s_.length(); i++){
             if(load.size() != 0 && (get<0>(load.top()) == info[s[i]])){
-                //More normal case:
+                //Normal Case:
                 load.pop();
             }
-            else if(load.size() != 0 && (get<0>(load.top()) == info[s[i]] && get<1>(load.top()) == locked[i])){
-                //Case 1: normal case:
+            else if(load.size() != 0 && (locked_[i] == '1' && s_[i] == ')' && get<1>(load.top()) == '0')){
+                //Case where 0 1; W }
                 load.pop();
             }
-            else if(load.size() != 0 && (get<1>(load.top()) == locked[i] == '0')){
-                //Case 2: If they are both wild card, pop?? TODO: MAY BE WRONG LOGIC
+            else if(load.size() != 0 && (locked_[i] == '0' && get<1>(load.top()) == '0')){
+                //Case where 0 0; W W
                 load.pop();
             }
-            else if(load.size() != 0 && ((s[i] == ')' && get<1>(load.top()) == '0'))){
-                //Case 3: if second one is a locked ) and first is either ( or wildcard;
+            else if(load.size() != 0 && (locked_[i] == '0' && get<1>(load.top()) == '1' && get<0>(load.top()) == '(')){
+                //Case where 1 0; { W
                 load.pop();
             }
             else{
-                //load the char into load;
                 load.push({s[i],locked[i]});
             }
-            //if there is a close before there is a open, false it;
         }
-        
+
+        //Final check for stack;
         if(load.size() == 0){
             //if everything is popped:
             return true;
@@ -71,6 +94,34 @@ public:
         else{
             return false;
         }
-
     }
 };
+
+
+
+
+
+            // //if the next char's open happends to be in the load's top. pop it.
+            // //condition 1: If stack is not empty;
+            // if(load.size() != 0 && (get<0>(load.top()) == info[s[i]])){
+            //     //More normal case:
+            //     load.pop();
+            // }
+            // else if(load.size() != 0 && (get<0>(load.top()) == info[s[i]] && get<1>(load.top()) == locked[i])){
+            //     //Case 1: normal case:
+            //     load.pop();
+            // }
+            // else if(load.size() != 0 && (get<1>(load.top()) == locked[i] == '0')){
+            //     //Case 2: If they are both wild card, pop?? TODO: MAY BE WRONG LOGIC
+            //     load.pop();
+            // }
+            // else if(load.size() != 0 && ((s[i] == ')' && get<1>(load.top()) == '0'))){
+            //     //Case 3: if second one is a locked ) and first is either ( or wildcard;
+            //     load.pop();
+            // }
+            // else{
+            //     //load the char into load;
+            //     load.push({s[i],locked[i]});
+            // }
+            // //if there is a close before there is a open, false it;
+        
