@@ -11,39 +11,40 @@
 // Return true if you can make s a valid parentheses string. Otherwise, return false.
 
 #include <iostream>
-#include <string>
-#include <map>
-#include <unordered_map>
-
-#include <stack>
-#include <tuple>
 
 using namespace std;
 
 class Solution {
 public:
     bool canBeValid(string s, string locked) {
-        stack<char> par;
+        int shifts = 0;
+        int stack = 0;
         
         if (s.length()%2 != 0)
              return false;
 
         for(int i=0; i<s.length(); i++){    
-            if(par.size()==0){
-                if(s[i]==')' && locked[i]=='1'){
-                    return false;
+            if(stack==0){
+                if(stack==0 && s[i]==')' && locked[i]=='1'){
+                    if(shifts!=0){
+                        shifts--;
+                        stack++;
+                    }else{
+                        return false;
+                    }
                 }else{ 
-                    par.push('(');
+                    stack++;
                 }
-            }else if(locked[i]=='0'||s[i]==')'){
-                string s = 
-                par.pop();
+            }else if(locked[i]=='0'){
+                stack--;
+                shifts++;
+            }else if(s[i]==')'){
+                stack--;
             }else{
-                par.push('(');
+                stack++;
             }
-            cout<<par.size();
         }
-        if(par.size()==0) return true;
+        if(!stack) return true;
         else return false;
         
         
