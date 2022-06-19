@@ -31,71 +31,107 @@ public:
         if (s[0] == ')' && locked[0] == '1'){
             return false;
         }
-        //use stack: first char is for s second for locked.
-        stack<tuple<char,char>> load;
-        //For the purpose of keeping tack of pairs.
-        unordered_map<char, char> info;
-        info[')'] = '(';
-
+        int op = 0;
+        int cp = 0;
+        //Loop through string. Forward
         for(int i = 0; i < s.length(); i++){
-            //First forLoop take out all senario with 11;
-            if(load.size() != 0 && get<1>(load.top()) == locked[i] == '1'){
-                //Case where the top is both 1: check for valid;
-                if(get<0>(load.top()) == info[s[i]]){
-                    load.pop();
-                }
+            //Either 0 or open, get open.
+            if(s[i] = '(' || locked[i] == '0'){
+                op++;
+            }
+            //Case of 1 and ) cp++
+            else{
+                cp++;
+            }
+            //from begin to end, if cp>op then no.
+            if(cp > op){
+                return false;
+            }
+        }
+        op = 0;
+        cp = 0;
+        for(int i=s.size()-1; i>=0; i--){
+            if(s[i] == ')' || locked[i] == '0'){
+                op++;
             }
             else{
-                load.push({s[i], locked[i]});
+                cp++;
+            }
+            if(cp > op){
+                return false;
             }
         }
-
-        //TODO: Brute Force method:
-        //Load it in the strings;
-        string s_ = "";
-        string locked_ = "";
-        while(load.size()!=0){
-            s_ += get<0>(load.top());
-            locked_ += get<1>(load.top());
-            load.pop();
-        }
-        //Reverse the strings:
-        reverse(s_.begin(), s_.end());
-        reverse(locked_.begin(), locked_.end());
-
-        //Left with several cases:
-        for(int i = 0; i < s_.length(); i++){
-            if(load.size() != 0 && (get<0>(load.top()) == info[s[i]])){
-                //Normal Case:
-                load.pop();
-            }
-            else if(load.size() != 0 && (locked_[i] == '1' && s_[i] == ')' && get<1>(load.top()) == '0')){
-                //Case where 0 1; W }
-                load.pop();
-            }
-            else if(load.size() != 0 && (locked_[i] == '0' && get<1>(load.top()) == '0')){
-                //Case where 0 0; W W
-                load.pop();
-            }
-            else if(load.size() != 0 && (locked_[i] == '0' && get<1>(load.top()) == '1' && get<0>(load.top()) == '(')){
-                //Case where 1 0; { W
-                load.pop();
-            }
-            else{
-                load.push({s[i],locked[i]});
-            }
-        }
-
-        //Final check for stack;
-        if(load.size() == 0){
-            //if everything is popped:
-            return true;
-        }
-        else{
-            return false;
-        }
+        return true;
     }
 };
+
+
+
+
+
+    //     //use stack: first char is for s second for locked.
+    //     stack<tuple<char,char>> load;
+    //     //For the purpose of keeping tack of pairs.
+    //     unordered_map<char, char> info;
+    //     info[')'] = '(';
+
+    //     for(int i = 0; i < s.length(); i++){
+    //         //First forLoop take out all senario with 11;
+    //         if(load.size() != 0 && get<1>(load.top()) == locked[i] == '1'){
+    //             //Case where the top is both 1: check for valid;
+    //             if(get<0>(load.top()) == info[s[i]]){
+    //                 load.pop();
+    //             }
+    //         }
+    //         else{
+    //             load.push({s[i], locked[i]});
+    //         }
+    //     }
+
+    //     //TODO: Brute Force method:
+    //     //Load it in the strings;
+    //     string s_ = "";
+    //     string locked_ = "";
+    //     while(load.size()!=0){
+    //         s_ += get<0>(load.top());
+    //         locked_ += get<1>(load.top());
+    //         load.pop();
+    //     }
+    //     //Reverse the strings:
+    //     reverse(s_.begin(), s_.end());
+    //     reverse(locked_.begin(), locked_.end());
+
+    //     //Left with several cases:
+    //     for(int i = 0; i < s_.length(); i++){
+    //         if(load.size() != 0 && (get<0>(load.top()) == info[s[i]])){
+    //             //Normal Case:
+    //             load.pop();
+    //         }
+    //         else if(load.size() != 0 && (locked_[i] == '1' && s_[i] == ')' && get<1>(load.top()) == '0')){
+    //             //Case where 0 1; W }
+    //             load.pop();
+    //         }
+    //         else if(load.size() != 0 && (locked_[i] == '0' && get<1>(load.top()) == '0')){
+    //             //Case where 0 0; W W
+    //             load.pop();
+    //         }
+    //         else if(load.size() != 0 && (locked_[i] == '0' && get<1>(load.top()) == '1' && get<0>(load.top()) == '(')){
+    //             //Case where 1 0; { W
+    //             load.pop();
+    //         }
+    //         else{
+    //             load.push({s[i],locked[i]});
+    //         }
+    //     }
+
+    //     //Final check for stack;
+    //     if(load.size() == 0){
+    //         //if everything is popped:
+    //         return true;
+    //     }
+    //     else{
+    //         return false;
+    //     }
 
 
 
