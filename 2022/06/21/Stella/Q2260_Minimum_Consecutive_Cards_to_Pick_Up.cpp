@@ -7,7 +7,7 @@ public:
     int minimumCardPickup(vector<int>& cards) {
         //store the last previous index of cards
         unordered_map<int, int> cardIndex;   
-        int minLength = INT_MAX
+        int minLength = INT_MAX;
         for(int i = 0; i<cards.size(); i++){
             if(cardIndex.count(cards[i])){
                 minLength = min(minLength,i-cardIndex[cards[i]]+1);
