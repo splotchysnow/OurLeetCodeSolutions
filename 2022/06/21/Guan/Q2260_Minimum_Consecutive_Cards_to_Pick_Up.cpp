@@ -1,20 +1,53 @@
-// You are given an integer array cards where cards[i] represents the value of the ith card. A pair of cards are matching if the cards have the same value.
-
-// Return the minimum number of consecutive cards you have to pick up to have a pair of matching cards among the picked cards. If it is impossible to have matching cards, return -1.
-
 class Solution {
 public:
     int minimumCardPickup(vector<int>& cards) {
-        //store the last previous index of cards
-        unordered_map<int, int> cardIndex;   
-        int minLength = INT_MAX;
-        for(int i = 0; i<cards.size(); i++){
-            if(cardIndex.count(cards[i])){
-                minLength = min(minLength,i-cardIndex[cards[i]]+1);
+        
+        // set<int> c;
+        int size = 0;    
+        map<int,int> c;
+        //Use map to collect the card value and the index associated with it.
+        priority_queue <int, vector<int>, greater<int> > pq;
+        for(int i = 0; i < cards.size(); i++){
+            //Throw the input into the set;
+            //if set size dosn't increase.
+            //return the ith position.
+            
+            // c.insert(cards[i]);
+            // if(c.size() == size){
+            //     return i+1;
+            // }
+            // else{
+            //     size++;
+            // }
+            
+            c.insert(pair<int, int>(cards[i], i));
+            if(c.size() == size){
+                // cout << "old card position: " << c[cards[i]] << endl;
+                // cout << "new card position: " << i << endl;
+                // cout << "card value: " << cards[i] << endl;
+                // cout << "position difference: " << i-c[cards[i]]+1 << endl << endl;
+                pq.push(i-c[cards[i]]+1);
+                //Update new index i:
+                c[cards[i]] = i;
             }
-                cardIndex[cards[i]] = i;
+            else{
+                size++;
+            }
+            
+            
         }
-        if (minLength==INT_MAX)return -1;
-        return minLength;
+        //Debugger:
+        for(int i = 0; i < cards.size(); i++){
+            if(i+5 < cards.size() && cards[i] == cards[i+5]){
+                cout << cards[i] << endl;
+            }
+        }
+        
+        if(pq.size() != 0){
+            return pq.top();
+        }
+        else{
+            return -1;
+        }
     }
 };
