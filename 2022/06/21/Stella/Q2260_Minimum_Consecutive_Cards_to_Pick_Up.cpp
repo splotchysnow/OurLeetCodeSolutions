@@ -5,7 +5,7 @@
 class Solution {
 public:
     int minimumCardPickup(vector<int>& cards) {
-        //store the previous index of cards
+        //store the last previous index of cards
         unordered_map<int, int> cardIndex;   
         int minLength = INT_MAX
         for(int i = 0; i<cards.size(); i++){
