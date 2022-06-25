@@ -22,7 +22,7 @@ class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
         vector<vector<int>> ans;
-        vector<int> currentAns;
+        
         //Case if the input have less than three value; return nothing.
 
         //Not sure how to use this to save time>>?>?>?
@@ -37,7 +37,8 @@ public:
         for(int i = 0; i < nums.size()-2; i++){
             for(int j = 1; j < nums.size()-1; j++){
                 for(int k = 2; k<nums.size(); k++){
-                    if(nums[i] + nums[j] == nums[k] && nums[i] != nums[j] && nums[i] != nums[k] && nums[j] != nums[k]){
+                    if(nums[i] + nums[j] + nums[k] == 0 && i != j && j != k && i != k){
+                        vector<int> currentAns;
                         //Check if its already duplicated.
                         currentAns.push_back(nums[i]);
                         currentAns.push_back(nums[j]);
@@ -58,6 +59,7 @@ public:
                 }
             }
         }
+        return ans;
 
 
         // //Brainstorm:
