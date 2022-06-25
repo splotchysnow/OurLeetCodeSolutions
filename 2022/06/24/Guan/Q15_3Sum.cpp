@@ -22,35 +22,31 @@ class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
         vector<vector<int>> ans;
-        
+        vector<int> currentAns;
         //Case if the input have less than three value; return nothing.
 
-        //Not sure how to use this to save time>>?>?>?
         set<vector<int>> duplicateCheck;
 
         if(nums.size() <= 2){
             return ans;
         }
 
-
         //BRUTE FORCE O(N^3) SOLUTION.
         for(int i = 0; i < nums.size()-2; i++){
-            for(int j = 1; j < nums.size()-1; j++){
-                for(int k = 2; k<nums.size(); k++){
-                    if(nums[i] + nums[j] + nums[k] == 0 && i != j && j != k && i != k){
+            for(int j = i+1; j < nums.size()-1; j++){
+                for(int k = j+1; k<nums.size(); k++){
+                    if(nums[i] + nums[j] == -nums[k]){
                         vector<int> currentAns;
                         //Check if its already duplicated.
                         currentAns.push_back(nums[i]);
                         currentAns.push_back(nums[j]);
                         currentAns.push_back(nums[k]);
-
+                        // cout << k;
                         //Make sure that this currentAns is not duplicated.
                         //EMMMMMM:
                         sort(currentAns.begin(), currentAns.end());
-
                         int n = duplicateCheck.size();
                         duplicateCheck.insert(currentAns);
-
                         if(n != duplicateCheck.size()){
                             //Throw this in a set;
                             ans.push_back(currentAns);
