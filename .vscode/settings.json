@@ -16,6 +16,7 @@
         "memory": "cpp",
         "utility": "cpp",
         "xlocnum": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "iostream": "cpp"
     }
 }
