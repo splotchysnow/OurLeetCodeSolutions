@@ -1,0 +1,5 @@
+CC = g++
+CFLAGS = -wall -g
+
+Make: Q338_Counting_Bits.cpp
+	$(CC) $(CFLAGS) -c Q338_Counting_Bits.cpp
