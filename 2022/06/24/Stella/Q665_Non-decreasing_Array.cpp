@@ -17,6 +17,7 @@ public:
         int max = 0;
         int last = 0;
         int chance = 0;
+        int s = 0;//
         for(int i = 1; i<nums.size();i++){
             cout<<last<<chance<<" ";
             if(chance==1 && (nums[i-1]>nums[i]||nums[i]<last)){
