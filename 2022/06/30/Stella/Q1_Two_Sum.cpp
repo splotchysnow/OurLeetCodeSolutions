@@ -4,3 +4,19 @@
 
 // You can return the answer in any order.
 
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        unordered_map<int, int> numIndex;
+        vector<int> result;
+        for(int i=0; i<nums.size(); i++){
+            if(numIndex.count(target-nums[i])){
+                vector<int> sol = {i, numIndex[target-nums[i]]};
+                return sol;
+            }else{
+                numIndex[nums[i]] = i;
+            }
+        }
+        return result;
+    }
+};
