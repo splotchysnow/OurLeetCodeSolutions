@@ -12,9 +12,7 @@ Close parentehsis must be less than open prentehsis.
 -> can only add a new prenthesis only if close count < open count.
 
 '''
-
-
-from unittest import registerResult
+from ast import List
 
 
 class Solution:
@@ -23,6 +21,13 @@ class Solution:
         stack = []
         result = []
 
+        """
+        3 Cases:
+            1. if open Brackets have the same amount as the closed brackets. append the stack into result.
+            2. if open is less than n, keep opening. append ( into stack and recursively keep going. POP ONE OUT EACH TIME
+            3. closed bracket amount is less than the open bracket amount. AFTER 2 where the extra bracket senario have happend.
+                work with the closed brackets. Then pop that stack.
+        """
         def backtrack(openN,closedN):
             if(openN == closedN == n):
                 result.append("".join(stack))
@@ -35,7 +40,7 @@ class Solution:
                 stack.append(")")
                 backtrack(openN,closedN+1)
                 stack.pop()
-
+        # Call function with initialize bracket to 0, and 0.
         backtrack(0,0)
         return result
 
