@@ -8,6 +8,14 @@
 // Output: "bab"
 // Explanation: "aba" is also a valid answer.
 
+0 -2 3
+0 min 0
+-2 0 -2 min -2
+
+
+
+//notCompleted
+
 class Solution {
 public:
     string longestPalindrome(string s) {
