@@ -33,8 +33,10 @@ public:
             cout<<maxHeight2[maxHeight1.size()-1-l]<<" ";
         }
         
-        for(int l = 0; l<maxHeight1.size(); l++){
-            cout<<maxHeight2[maxHeight1.size()-1-l]<<" ";
+        cout<<endl<<" ";
+        for(int p = 0; p<maxHeight1.size(); p++){
+            result += min(maxHeight1[p],maxHeight2[maxHeight1.size()-1-p])-height[p];
+            cout<<min(maxHeight1[p],maxHeight2[maxHeight1.size()-1-p])<<" ";
         }
         
 //         cout<<endl<<" ";
