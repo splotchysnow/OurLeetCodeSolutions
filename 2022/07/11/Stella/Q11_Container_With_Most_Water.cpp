@@ -15,3 +15,25 @@
 // Return the maximum amount of water a container can store.
 
 // Notice that you may not slant the container.
+
+
+class Solution {
+public:
+    int maxArea(vector<int>& height) {
+        int start = 0;
+        int end = height.size()-1;
+        int m = min(height[start],height[end])*(end);
+        //int h = (min(height[start],height[end]));
+        while(end>start){
+            if(height[start]>=height[end]){
+                m = max(m,height[end]*(end-start));
+                end--;
+            }else{
+                m = max(m,height[start]*(end-start));
+                start++;
+            }
+        }
+        //cout<<height.size();
+        return m;
+    }
+};
