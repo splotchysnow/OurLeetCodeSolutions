@@ -3,9 +3,7 @@
 class Solution {
 public:
     int trap(vector<int>& height) {
-        //int max = 0;
         int result = 0;
-        int h = 0;
         vector<int> maxHeight1, maxHeight2;
         maxHeight1.push_back(height[0]);
         maxHeight2.push_back(height[height.size()-1]);
@@ -19,40 +17,45 @@ public:
             maxHeight2.push_back(m2);
         }
         
-//         int result = 0;
-//         int start = 0;
-//         int store = 0;
-        
-        cout<<" ";
-        for(int k = 0; k<maxHeight1.size(); k++){
-            cout<<maxHeight1[k]<<" ";
-        }
-        
-        cout<<endl<<" ";
-        for(int l = 0; l<maxHeight1.size(); l++){
-            cout<<maxHeight2[maxHeight1.size()-1-l]<<" ";
-        }
-        
-        cout<<endl<<" ";
-        for(int p = 0; p<maxHeight1.size(); p++){
-            result += min(maxHeight1[p],maxHeight2[maxHeight1.size()-1-p])-height[p];
-            cout<<min(maxHeight1[p],maxHeight2[maxHeight1.size()-1-p])<<" ";
-        }
+//         cout<<" ";
+//         for(int k = 0; k<maxHeight1.size(); k++){
+//             cout<<maxHeight1[k]<<" ";
+//         }
         
 //         cout<<endl<<" ";
-//         start = maxHeight[0];
-//         for(int j = 1; j<maxHeight.size(); j++){
-//             if(height[j-1]>height[j]){
-//                 start = maxHeight[j];
-//                 store += maxHeight[j]-height[j];
-//             }else{
-//                 result+=store;
-//                 store = 0;
-//                 start = height[j];
-//             }
-//             cout<<result<<" ";
-//             //cout<<store;
+//         for(int l = 0; l<maxHeight1.size(); l++){
+//             cout<<maxHeight2[maxHeight1.size()-1-l]<<" ";
 //         }
-           return result;
+        
+//         cout<<endl<<" ";
+        for(int p = 0; p<maxHeight1.size(); p++){
+            result += min(maxHeight1[p],maxHeight2[maxHeight1.size()-1-p])-height[p];
+            // cout<<min(maxHeight1[p],maxHeight2[maxHeight1.size()-1-p])<<" ";
+        }
+
+        return result;
     }
 };
+
+
+/*
+class Solution {
+public:
+    int trap(vector<int>& height) {
+        int result = 0;
+        vector<int> maxHeight1, maxHeight2;
+        maxHeight1.push_back(height[0]);
+        maxHeight2.push_back(height[height.size()-1]);
+        for(int i = 1; i<height.size(); i++){
+            maxHeight1.push_back(max(maxHeight1[i-1], height[i]));
+            maxHeight2.push_back(max(maxHeight2[i-1], height[height.size()-1-i]));
+        }
+        
+        for(int p = 0; p<maxHeight1.size(); p++){
+            result += min(maxHeight1[p],maxHeight2[maxHeight1.size()-1-p])-height[p];
+        }
+
+        return result;
+    }
+};
+*/
