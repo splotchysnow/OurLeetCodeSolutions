@@ -9,6 +9,17 @@
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
-        
+        unsigned int ind = 1;
+        int prev = nums[0];
+        for(int i = 1; i<nums.size(); i++){
+            if(nums[i]!=prev){
+                int a = nums[ind];
+                prev = nums[i];
+                nums[ind] = nums[i];
+                nums[i] = nums[ind];
+                ind++;
+            }
+        } 
+        return ind;
     }
 };
