@@ -9,7 +9,18 @@ Do not allocate extra space for another array. You must do this by modifying the
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
-        
-        
+        unsigned int ind = 1;
+        int prev = nums[0];
+        int prev2 = nums[0];
+        for(int i = 1; i<nums.size(); i++){
+            if(nums[i]!=prev||prev!=prev2||i==1){
+                int a = nums[ind];
+                prev2 = prev;
+                prev = nums[i];
+                nums[ind] = nums[i];
+                ind++;
+            }
+        } 
+        return ind;
     }
 };
