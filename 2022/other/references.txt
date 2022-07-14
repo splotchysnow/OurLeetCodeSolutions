@@ -1,5 +1,5 @@
+--------------------------------------------
 C++ REFERENCES FOR INCLUDES:
-
 --------------------------------------
 
 #include <iostream>
@@ -10,11 +10,15 @@ C++ REFERENCES FOR INCLUDES:
 #include <set>
 
 using namespace std;
+--------------------------------------------
+
+
+
+
 
 ----------------------------------------
 Makefile REFERENCES:
 ----------------------------------------
-
 https://makefiletutorial.com/
 
 CC=gcc
@@ -33,6 +37,9 @@ all: name.cpp
 
 clean:
 	$(RM) $(FFlAGS) name name.o
+--------------------------------------------
+
+
 
 -----------------------------------------
 Header REFERENCES
@@ -47,9 +54,36 @@ Header REFERENCES
  * @copyright Copyright (c) 2022
  * 
  */
+--------------------------------------------
+
+
+
+
+
+--------------------------------------------
+Pyton REFERENCES:
+--------------------------------------------
+Return typing:
+https://docs.python.org/3/library/typing.html
+--------------------------------------------
+
+
+
 
 --------------------------------------------
 Links:
-//Website for referneces on making the makefiles.
+Website for referneces on making the makefiles.
 https://makefiletutorial.com/
+
+Return typing:
+https://docs.python.org/3/library/typing.html
 --------------------------------------------
+
+
+
+
+
+
+
+
+

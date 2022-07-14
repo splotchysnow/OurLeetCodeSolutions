@@ -1,3 +1,5 @@
+import List;
+
 class Solution:
     def escapeGhosts(self, ghosts: List[List[int]], target: List[int]) -> bool:
         #The d abs distance of target.
