@@ -1,3 +1,12 @@
+#include <iostream>
+#include <string>
+#include <map>
+#include <unordered_map>
+#include <queue>
+
+#include <stack>
+
+using namespace std;
 class Solution {
 public:
     int minimumCardPickup(vector<int>& cards) {

@@ -1,3 +1,13 @@
+
+#include <iostream>
+#include <string>
+#include <map>
+#include <unordered_map>
+#include <algorithm>
+#include <set>
+
+using namespace std;
+
 // Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
 
 // Implement the MinStack class:

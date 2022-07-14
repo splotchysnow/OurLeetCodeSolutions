@@ -1,3 +1,11 @@
+#include <iostream>
+#include <string>
+#include <map>
+#include <unordered_map>
+#include <algorithm>
+#include <set>
+
+using namespace std;
 // Given an unsorted integer array nums, return the smallest missing positive integer.
 
 // You must implement an algorithm that runs in O(n) time and uses constant extra space.

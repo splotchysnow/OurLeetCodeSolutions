@@ -5,6 +5,8 @@
 #include <algorithm>
 #include <set>
 
+#include "TreeNode.h"
+
 using namespace std;
 
 
