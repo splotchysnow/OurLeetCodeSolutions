@@ -9,7 +9,6 @@
 
 using namespace std;
 
-//TODO: NOT FINISHED?
 
 /**
  * Definition for a binary tree node.
@@ -24,17 +23,7 @@ using namespace std;
  */
 class Solution {
 public:
-    vector<int> rightSideView(TreeNode* root) {
-        vector<int> ans;
-        while(root != nullptr){
-            ans.push_back(root->val);
-            if(root->right != nullptr){
-                root = root->right;
-            }
-            else{
-                root = root->left;
-            }
-        }
-        return ans;
+    TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
+        
     }
 };

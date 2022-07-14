@@ -1,0 +1,55 @@
+C++ REFERENCES FOR INCLUDES:
+
+--------------------------------------
+
+#include <iostream>
+#include <string>
+#include <map>
+#include <unordered_map>
+#include <algorithm>
+#include <set>
+
+using namespace std;
+
+----------------------------------------
+Makefile REFERENCES:
+----------------------------------------
+
+https://makefiletutorial.com/
+
+CC=gcc 
+CFLAGS=-Wall
+main: main.o hello_fn.o
+
+all:
+    gcc -Wall -c -o main.o main.c
+
+clean:
+	rm -f main main.o hello_fn.o
+
+
+
+
+
+
+
+
+-----------------------------------------
+Header REFERENCES
+-----------------------------------------
+/**
+ * @file test.cpp
+ * @author Guan Li (gcl001@ucsd.edu)
+ * @brief 
+ * @version 0.1
+ * @date xx - xx - xxxx
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
+--------------------------------------------
+Links:
+//Website for referneces on making the makefiles.
+https://makefiletutorial.com/
+--------------------------------------------

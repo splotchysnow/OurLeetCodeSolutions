@@ -5,6 +5,11 @@
 
 // Find and return the maximum profit you can achieve.
 #include <iostream>
+#include <string>
+#include <map>
+#include <unordered_map>
+
+#include <stack>
 
 using namespace std;
 

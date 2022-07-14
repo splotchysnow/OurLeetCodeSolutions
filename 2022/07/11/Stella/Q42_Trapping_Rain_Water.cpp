@@ -1,3 +1,12 @@
+#include <iostream>
+#include <string>
+#include <map>
+#include <unordered_map>
+#include <algorithm>
+#include <set>
+
+using namespace std;
+
 // Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it can trap after raining.
 
 class Solution {

@@ -1,3 +1,12 @@
+#include <iostream>
+#include <string>
+#include <map>
+#include <unordered_map>
+#include <algorithm>
+#include <set>
+
+using namespace std;
+
 // Given a string s, return the longest palindromic substring in s.
 
 

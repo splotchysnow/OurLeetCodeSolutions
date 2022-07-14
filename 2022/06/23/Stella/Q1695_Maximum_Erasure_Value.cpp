@@ -1,3 +1,11 @@
+#include <iostream>
+#include <string>
+#include <map>
+#include <unordered_map>
+
+#include <stack>
+
+using namespace std;
 // You are given an array of positive integers nums and want to erase a subarray containing unique elements. The score you get by erasing the subarray is equal to the sum of its elements.
 
 // Return the maximum score you can get by erasing exactly one subarray.
