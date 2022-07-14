@@ -12,11 +12,11 @@ public:
         unsigned int ind = 1;
         int prev = nums[0];
         for(int i = 1; i<nums.size(); i++){
+            //when nums[i] not equal to the last num stored, store it 
+            //to the place of nums[ind] which ind is returned
             if(nums[i]!=prev){
-                int a = nums[ind];
                 prev = nums[i];
                 nums[ind] = nums[i];
-                nums[i] = nums[ind];
                 ind++;
             }
         } 
