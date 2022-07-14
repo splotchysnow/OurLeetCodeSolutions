@@ -17,22 +17,22 @@ Makefile REFERENCES:
 
 https://makefiletutorial.com/
 
-CC=gcc 
+CC=gcc
 CFLAGS=-Wall
-main: main.o hello_fn.o
+RM=rm
+FFlAGS=-f
 
-all:
-    gcc -Wall -c -o main.o main.c
+name: name.cpp
+	$(CC) $(CFLAGS) -c name.cpp
+
+name.exe: name.o
+	$(CC) $(CFLAGS) -o name.exe name.o
+
+all: name.cpp
+	$(CC) $(CFLAGS) name.cpp -o name
 
 clean:
-	rm -f main main.o hello_fn.o
-
-
-
-
-
-
-
+	$(RM) $(FFlAGS) name name.o
 
 -----------------------------------------
 Header REFERENCES
