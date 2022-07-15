@@ -1,3 +1,5 @@
+#TODO: DOSN"T WORK RN  ======>
+
 from operator import truediv
 from typing import List
 
@@ -8,9 +10,10 @@ visitedMap = List[List[int]]
 
 class Solution:
     def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
-        #dimensions initialized.
-        h = len(grid)
-        v = len(grid[0])
+        #dimensions initialized. TODO MAYBBE ITS FLIPPED?, don't matter in a square case though
+        h = len(grid[0])
+        v = len(grid)
+
 
         #initialize the visitedMap: (with Falses.)
         visitedMap = [[False]* h for i in range(v)]
@@ -19,7 +22,7 @@ class Solution:
         for i in range(h):
             for j in range(v):
                 #Recursions:
-                newMax_ = recursivelyDefine(h,v,grid[h][v],visitedMap[h][v],0)
+                newMax_ = recursivelyDefine(i,j,grid[i][j],visitedMap[i][j],0)
                 if(newMax_ > max_):
                     max_ = newMax_
         return newMax_
@@ -35,7 +38,7 @@ variables:
     maximum: the size of the island at the moment.
 """
 def recursivelyDefine(hCord: int, vCord: int, gridValue: int, visited : bool, maximum: int) -> int:
-    
+    print(hCord, " ", vCord)
     #Cases for out of bounds.
     if(hCord < 0 or hCord > len(grid)):
         return maximum
