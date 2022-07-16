@@ -28,10 +28,17 @@ class Solution:
 
 def main():
     a = Solution()
-    # print("Test1", a.lengthOfLongestSubstring("abcabcbb") == 3,a.lengthOfLongestSubstring("abcabcbb"))
-    # print("Test2", a.lengthOfLongestSubstring("bbbbbb") == 1,a.lengthOfLongestSubstring("bbbbbb"))
-    # print("Test3", a.lengthOfLongestSubstring("pwwkew") == 3, a.lengthOfLongestSubstring("pwwkew"))
-    print("Test3", a.lengthOfLongestSubstring("c") == 1, a.lengthOfLongestSubstring("c"))    
-
+    b = 0
+    b = a.lengthOfLongestSubstring("abcabcbb")
+    print("Test1", b == 3, b)
+    b = a.lengthOfLongestSubstring("bbbbbb")
+    print("Test2", b == 1,a.lengthOfLongestSubstring("bbbbbb"))
+    b = a.lengthOfLongestSubstring("pwwkew")
+    print("Test3", b== 3, b)
+    b = a.lengthOfLongestSubstring("c") 
+    print("Test4", b== 1, b)    
+    b = a.lengthOfLongestSubstring("dvdf") 
+    print("Test5", b== 3, b)    
+    
 if __name__ == "__main__":
     main()
