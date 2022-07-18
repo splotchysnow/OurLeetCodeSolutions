@@ -16,6 +16,19 @@
 class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-        
+        ListNode* sol = new ListNode;
+        ListNode* curr1 = l1;
+        ListNode* curr2 = l2;
+        ListNode* curr3 = sol;
+        //int 
+        while(curr1!=nullptr && curr2!=nullptr){
+            //if()
+            curr3->val = curr1->val + curr2->val;
+            curr1 = curr1->next;
+            curr2 = curr2->next;
+            curr3->next = new ListNode;
+            curr3 = curr3->next;
+        }
+        return sol;
     }
 };
