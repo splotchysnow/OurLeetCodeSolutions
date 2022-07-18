@@ -1,0 +1,42 @@
+﻿Question Number,Name,Name of the Question,Progress,Difficulty,Language Written,Date
+1,Guan,Two Sum,Y,E,Python,20220214
+136,Guan,IDK,Y,E,Python,20220214
+217,Guan,Contains Duplicate,Y,E,Python,20220214
+290,Guan,Word Pattern,Y,E,Python,20220214
+383,Guan,Ransom Note,Y,E,Python,20220214
+387,Guan,First Unique Character in a string,Y,E,Python,20220214
+763,Guan,Partition Labels,N,M,Python,20220214
+2,Guan,Add two numbers,N,M,Python,20220221
+1286,Guan,Combination Iterator,N,M,Java,20220313
+9,Guan,Palindrome Number,Y,E,C++,20220617
+136,Guan,Roman to Interger,Y,E,C++,20220617
+14,Guan,Longest Common Prefix,N,E,C++,20220618
+20,Guan,Valid Parenthesis,Y,E,C++,20220618
+2116,Guan,Check if a parenthesis string contains,Y,M,C++,20220618
+121,Guan,Best Time to B/S stock,Y,E,C++,20220620
+122,Guan,Best Time to B/S stock 2,Y,M,C++,20220620
+123,Guan,Best Time to B/S stock 3,N,H,C++,20220620
+2260,Guan,Minumum Consecutive Cards,Y,M,C++,20220621
+27,Guan,Remove Element,Y,E,Python,20220623
+15,Guan,3Sum,N,M,C++,20220624
+21,Guan,Merge Two sorted List,N,E,C++,20220625
+28,Guan,Implemenet strStr(),Y,E,C++,20220626
+338,Guan,Counting Bits,Y,E,C++,20220627
+283,Guan,Move Zeros,N,E,C++,20220628
+263,Guan,Ugly Numbers,Y,E,C++,20220630
+1710,Guan,Maximum Units on a Truck,Y,E,C++,20220630
+11,Guan,Container with Most water,Y,M,C++,20220701
+42,Guan,Trapping Rain Water,N,H,C++,20220702
+376,Guan,Wiggle Subsequences,Y,M,C++,20220702
+135,Guan,Candy,N,H,C++,20220703
+128,Guan,Longest Consequtive Numbers,,,C++,20220704
+509,Guan,Fibonacci Numbers,Y,E,C++,20220705
+22,Guan,Generate Parentheses,Y,E,Python,20220706
+155,Guan,Min Stack,Y,M,Python,20220706
+789,Guan,Escape the Ghosts,Y,M,Python,20220707
+5,Guan,Longest Palindromic Substring,Y,M,C++,20220708
+199,Guan,Binary Tree Right side vIew,N,M,C++,20220710
+102,Guan,Binary Tree Level Order Travel,N,M,C++,20220712
+105,Guan,Construct Binary Tree from preorder,N,M,C++,20220713
+695,Guan,Max Area of island,Y,M,Python,20220715
+21,Guan,Merge Two sorted List,N,E,Python,20220717
