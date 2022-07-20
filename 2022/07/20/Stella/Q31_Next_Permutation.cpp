@@ -10,3 +10,42 @@
 
 // The replacement must be in place and use only constant extra memory.
 
+class Solution {
+public:
+    void nextPermutation(vector<int>& nums) {
+        int m = 1;
+        int end = 0;
+        priority_queue <int> pq;
+        while(nums.size()>=m+1){
+            pq = priority_queue <int>();
+            end = nums[nums.size()-m];
+            for(int a = nums.size()-2; a>nums.size()-(m+1); a--){
+                pq.push(nums[a]);
+            }
+            for(int i = nums.size()-(m+1); i>=0; i--){
+                if(nums[i]<end){
+                    pq.push(nums[i]);
+                    nums[i] = end;
+                    for(int j = nums.size()-1; j>i; j--){
+                        nums[j] = pq.top();
+                        pq.pop();
+                    }//cout<<m;
+                    return;
+                }else{
+                    pq.push(nums[i]);
+                }
+            }
+            m++;
+        }    
+        //cout<<m;
+        pq = priority_queue <int>();
+        for(int h = 0; h<nums.size(); h++){
+            pq.push(nums[h]);
+        }
+            
+        for(int k = nums.size()-1; k>=0; k--){
+            nums[k] = pq.top();
+            pq.pop();
+        }
+    }
+};
