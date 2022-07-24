@@ -15,14 +15,19 @@ class Solution:
 
         x = ""
         ans = ""
+        over = False
         min_size = min([len(x) for x in strs])
         # For every letter of the word:
         for i in range(min_size):
             # For each word in the lists:
             x = strs[0][i]
             for j in range(len(strs)):
+                print(x, strs[j][i])
                 if strs[j][i] != x:
+                    over = True
                     break
+            if(over):
+                break
             ans += x
         return ans
 
